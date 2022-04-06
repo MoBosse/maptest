@@ -24,9 +24,11 @@
     <script>
       var map = L.map('map').setView([51.505, -0.09], 13);
       
-      L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      id: mapbox.light,
+      accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w,
+      attribution: <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors |<br class="visible-xs"> <a href="https://www.bkg.bund.de">&copy; GeoBasis-De / BKG 2022</a> |<br class="hidden-lg">,
       maxZoom: 17,
       minZoom: 9
     }).addTo(map);
