@@ -24,10 +24,8 @@
     <script>
       var map = L.map('map').setView([51.505, -0.09], 13);
       
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      L.tileLayer('http://tiles.mapc.org/trailmap-onroad/{z}/{x}/{y}.png',
     {
-      id: mapbox.light,
-      accessToken: pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w,
       attribution: '?',
       maxZoom: 17,
       minZoom: 9
