@@ -1,3 +1,7 @@
 .redText{
   color: red;
 }
+
+#map { 
+  height: 180px; 
+}
