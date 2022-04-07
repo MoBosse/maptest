@@ -23,6 +23,9 @@
     <div id="map"></div>
     
     <script>
+      var map_layers= [{label: 'Region', min_zoom: 4.5, max_zoom: 7.5, staticBorders: true, serviceUrl: 'states.geojson'},
+                       {label: 'Region2', min_zoom: 8, max_zoom: 11, staticBorders: true, serviceUrl: 'krs.geojson'}];
+      
       //init map
       var map = L.map('map').setView([50.75088705910994, 7.0919036392609796], 5);
       
@@ -37,15 +40,13 @@
       }).addTo(map);
       
       
-      /*
-      var geoURLs =  $.getJSON("states.geojson","krs.geojson");
-      $.when.apply($, geoURLs).done(function(geoURLs) {
-        for ( var layer = 0; layer < geoURLs.length; layer ++) {
-          
-        }
-      }
-      */
       
+      var geoURLs = map_layers.map(function(item) {
+        return map_layer.serviceUrl;
+      };
+                                      
+      console.log('geoURLs: ', geoURLs);                
+     
       
       //load geojson
       $.getJSON("states.geojson",function(data){
