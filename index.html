@@ -44,10 +44,16 @@
       var geoURLs = map_layers.map(function(item) {
         return $.getJSON(item.serviceUrl);
       });
-                                      
-      console.log('geoURLs: ', geoURLs);                
-     
+      console.log('geoURLs: ', geoURLs); 
       
+      $.when.apply($, geoURLs).done(function(data) { 
+        for (var i = 0; i < geoURLs.length; i++){
+          L.geoJson(data[i]).addTo(map);
+        }
+      };                              
+                     
+     
+      /*
       //load geojson
       $.getJSON("states.geojson",function(data){
         L.geoJson( data, {
@@ -67,7 +73,7 @@
           }
         }  ).addTo(map);
       });
-      
+      */
       
       
     </script>
