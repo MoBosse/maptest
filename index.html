@@ -37,9 +37,26 @@
       }).addTo(map);
       
       //load geojson
-      $.getJSON("states.geojson",function(hoodData){
-        L.geoJson( hoodData ).addTo(map);
+      $.getJSON("states.geojson",function(data){
+        L.geoJson( data, {
+          style: function(feature){
+            var fillColor,
+                ags = feature.properties.AGS;
+            if ( ags == 'code01' ) fillColor = "#006837";
+            else if ( ags == 'code01' ) fillColor = "#31a354";
+            else if ( ags == 'code02' ) fillColor = "#78c679";
+            else if ( ags == 'code03' ) fillColor = "#c2e699";
+            else if ( ags == 'code04' ) fillColor = "#ffffcc";
+            else fillColor = "#f7f7f7";  // no data
+            return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+          },
+          onEachFeature: function( feature, layer ){
+            layer.bindPopup( "<strong>" + feature.properties.GEN + "</strong><br/>" + feature.properties.AGS )
+          }
+        }  ).addTo(map);
       });
+      
+      
       
     </script>
     
