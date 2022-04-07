@@ -36,7 +36,7 @@
       }).addTo(map);
       
       //load geojson
-      $.getJSON("maptest/states.geojson",function(hoodData){
+      $.getJSON("states.geojson",function(hoodData){
         L.geoJson( hoodData ).addTo(map);
       });
       
