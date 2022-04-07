@@ -39,7 +39,7 @@
           accessToken: 'pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w'
       }).addTo(map);
       
-      
+      /*
       
       var geoURLs = map_layers.map(function(item) {
         return $.getJSON(item.serviceUrl);
@@ -52,10 +52,10 @@
         }
       });                              
                      
-     
-      /*
+     */
+      
       //load geojson
-      $.getJSON("states.geojson",function(data){
+      $.getJSON("krs.geojson",function(data){
         L.geoJson( data, {
           style: function(feature){
             var fillColor,
@@ -73,7 +73,7 @@
           }
         }  ).addTo(map);
       });
-      */
+      
       
       
     </script>
