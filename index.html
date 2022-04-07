@@ -22,8 +22,10 @@
     <div id="map"></div>
     
     <script>
+      //init map
       var map = L.map('map').setView([50.75088705910994, 7.0919036392609796], 13);
       
+      //load tile layer
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
@@ -32,6 +34,11 @@
           zoomOffset: -1,
           accessToken: 'pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w'
       }).addTo(map);
+      
+      //load geojson
+      $.getJSON("maptest/states.geojson",function(hoodData){
+        L.geoJson( hoodData ).addTo(map);
+      });
       
     </script>
     
