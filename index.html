@@ -42,7 +42,7 @@
       
       
       var geoURLs = map_layers.map(function(item) {
-        return item.serviceUrl;
+        return $.getJSON(item.serviceUrl);
       });
                                       
       console.log('geoURLs: ', geoURLs);                
