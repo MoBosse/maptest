@@ -1,5 +1,5 @@
 function createPdf() {
-  if document.getElementById("input").value == "" {
+  if (document.getElementById("input").value == "") {
       alert("Please enter text");
   }
   else {
